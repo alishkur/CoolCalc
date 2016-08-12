@@ -9,15 +9,18 @@ import android.widget.TextView;
 
 public class CalcActivity extends Activity {
 
+    //Declaring text field variable
     TextView resultView;
 
     public enum Operation{
         ADD,SUBTRACT, DIVIDE, MULTIPLY, EQUAL
     }
-
+// Creating varible for al pressed number
     String runningNumber = "";
+// Creating first and second variable for two set of numbers
     String leftValueStr = "";
     String rightValueStr = "";
+
     Operation currentOperation;
     int result = 0;
 
@@ -49,11 +52,13 @@ public class CalcActivity extends Activity {
 
         resultView = (TextView)findViewById(R.id.resultsText);
 
+// Clearing text field on load
         resultView.setText("");
 
         oneBtn.setOnClickListener(new View.OnClickListener(){
           @Override
             public void onClick(View v){
+              // Calling "numberPressed" function with parametrs
               numberPressed(1);
 
           }
@@ -62,6 +67,7 @@ public class CalcActivity extends Activity {
         twoBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(2);
 
             }
@@ -70,6 +76,7 @@ public class CalcActivity extends Activity {
         threeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(3);
 
             }
@@ -78,6 +85,7 @@ public class CalcActivity extends Activity {
         fourBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(4);
 
             }
@@ -87,6 +95,7 @@ public class CalcActivity extends Activity {
         fiveBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(5);
 
             }
@@ -96,6 +105,7 @@ public class CalcActivity extends Activity {
         sixBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(6);
 
             }
@@ -105,6 +115,7 @@ public class CalcActivity extends Activity {
         sevenBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(7);
 
             }
@@ -113,6 +124,7 @@ public class CalcActivity extends Activity {
         eightBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(8);
 
             }
@@ -121,6 +133,7 @@ public class CalcActivity extends Activity {
         nineBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(9);
 
             }
@@ -129,6 +142,7 @@ public class CalcActivity extends Activity {
         zeroBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // Calling "numberPressed" function with parametrs
                 numberPressed(0);
 
             }
@@ -218,8 +232,10 @@ public class CalcActivity extends Activity {
 
     }
 
+    // Function for press button and show numbers in the text field
+    // Taking value from pressed button and assign it to the variable "number" and shows it in text field
     void numberPressed(int number){
-
+        //+= Means add next pressed number to the right
         runningNumber += String.valueOf(number);
         resultView.setText(runningNumber);
 
